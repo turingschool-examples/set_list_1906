@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Song.destroy_all
-
-Song.create(title: "Don't Stop Believin'", length: 303, play_count: 123456)
-Song.create(title: "Never Gonna Give You Up", length: 253, play_count: 987654321)
+journey = Artist.create(name: "Journey")
+rickastley = Artist.create(name: "Rick Astley")
+song_1 = journey.songs.create(title: "Don't Stop Believin'", length: 300, play_count: 200)
+song_2 = journey.songs.create(title: "Wheel In The Sky", length: 500, play_count: 400)
+song_3 = rickastley.songs.create(title: "Never Gonna Give You Up", length: 250, play_count: 300)

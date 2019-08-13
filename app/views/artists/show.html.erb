@@ -1,0 +1,6 @@
+<%= @artist.name %>
+
+<% @artist.songs.each do |song| %>
+  <%= song.title %>
+  Play Count: <%= song.play_count %>
+<% end %>

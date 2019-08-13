@@ -17,4 +17,10 @@ describe "artist show page" do
     expect(page).to have_content(@song_2.title)
     expect(page).to have_content("Play Count: #{@song_2.play_count}")
   end
+
+  it "should show the average play count of the artist" do
+    visit "/artists/#{@journey.id}"
+
+    expect(page).to have_content("Average Play Count: 300")
+  end
 end

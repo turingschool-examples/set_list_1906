@@ -16,4 +16,10 @@ describe "songs index page" do
     expect(page).to have_content(@song_2.title)
     expect(page).to have_content("Play Count: #{@song_2.play_count}")
   end
+
+  it "should have count of songs on page" do
+    visit "/songs"
+
+    expect(page).to have_content("Number of Songs: 2")
+  end
 end

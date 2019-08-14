@@ -1,6 +1,11 @@
+
+<section class = "all-songs-grid">
 <% @songs.each do |song| %>
-  <p><%= song.title %></p>
-  <p>Play Count: <%= song.play_count %></p>
+  <section id = "song">
+    <p><%= song.title %></p>
+    <p>Play Count: <span style= "color:purple"><%= song.play_count %></span></p>
+  </section>
 <% end %>
+</section>
 
 Number of Songs: <%= @songs.total_songs %>

@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+
+#set-list-header {
+  text-align: center;
+  background-color: blue;
+  color: white;
+}
+
+#song {
+  color: blue;
+}
+
+.set-list-class {
+  text-align: center;
+  background-color: pink;
+  color: purple;
+  padding: 100px;
+}
+
+.all-songs-grid{
+  display: grid;
+  grid-template-columns: auto auto auto
+}

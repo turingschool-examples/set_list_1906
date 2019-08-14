@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Song.destroy_all
+Artist.destroy_all
 
-Song.create(title: "Don't Stop Believin'", length: 303, play_count: 123456)
-Song.create(title: "Never Gonna Give You Up", length: 253, play_count: 987654321)
+journey = Artist.create(name: "Journey")
+rick = Artist.create(name: "Rick Astley")
+journey.songs.create!(title: "Don't Stop Believin'", length: 303, play_count: 123456)
+rick.songs.create!(title: "Never Gonna Give You Up", length: 253, play_count: 987654321)

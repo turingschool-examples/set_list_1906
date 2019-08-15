@@ -30,6 +30,5 @@ describe "New Song For Artist" do
     expect(page).to have_content(title)
     expect(page).to have_content("Play Count: #{play_count}")
     expect(page).to have_content("Length: #{length}")
-
   end
 end

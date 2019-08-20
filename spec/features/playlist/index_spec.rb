@@ -15,12 +15,10 @@ RSpec.describe "the Playlist index page" do
     heaven = rock.songs.create!(title: "Heaven", length: 832, play_count: 83209, artist: talking_heads)
     dont_stop = rock.songs.create!(title: "Don't Stop Believin'", length: 832, play_count: 83209, artist: journey)
 
-    binding.pry
     chicken = zac_brown.songs.create!(title: "Chicken Fried", length: 4378, play_count: 7453689)
     country.songs << chicken
     jams.songs << chicken
     jams.songs << place
-    binding.pry
 
     visit '/playlists'
 

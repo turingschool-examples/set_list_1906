@@ -5,3 +5,5 @@
   <p>Length: <%= song.length %></p>
   <p>Play Count: <%= song.play_count %></p>
 <% end %>
+
+<%= link_to "Add Song", "/artists/#{@artist.id}/songs/new"%>

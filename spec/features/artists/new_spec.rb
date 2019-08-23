@@ -1,11 +1,3 @@
-# As a visitor
-# When I visit the artists index
-# And click on 'New Artist'
-# Then my current path is '/artists/new'
-# and I fill in the artist's name
-# Then I click 'Create Artist'
-# I am redirected to this new artists show page
-
 require 'rails_helper'
 
 RSpec.describe "Creating a new artist" do
@@ -23,5 +15,13 @@ RSpec.describe "Creating a new artist" do
     new_artist = Artist.last
     expect(current_path).to eq("/artists/#{new_artist.id}")
     expect(page).to have_content("Journey")
+  end
+  it "I can't create a new artist if field is not filled out" do
+    visit '/artists/new'
+
+    click_on "Create Artist"
+
+    expect(page).to have_content("You must enter an artist name")
+    # expect(page).to have_link("Create Artist")
   end
 end

@@ -11,8 +11,14 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    artist = Artist.create!(artist_params)
-    redirect_to "/artists/#{artist.id}"
+    artist = Artist.create(artist_params)
+    if artist.save
+      flash[:success] = "Artist Created"
+      redirect_to "/artists/#{artist.id}"
+    else
+      flash[:error] = "You must enter an artist name"
+      redirect_to "/artists/new"
+    end
   end
 
   private

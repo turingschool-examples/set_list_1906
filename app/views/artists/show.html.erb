@@ -1,9 +1,7 @@
 <h1> <%= @artist.name %></h1>
 
 <% @artist.songs.each do |song| %>
-  <h2> <%= song.title %></h2>
-  <p>Length: <%= song.length %></p>
-  <p>Play Count: <%= song.play_count %></p>
+  <%= render partial:"partials/song_info", locals:{song_item: song} %>
 <% end %>
 
 <%= link_to "Add Song", "/artists/#{@artist.id}/songs/new"%>

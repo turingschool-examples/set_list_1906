@@ -13,9 +13,7 @@ RSpec.describe "Registering a User" do
     fill_in :username, with: username
     fill_in :password, with: "password"
 
-    click_link("Submit")
-
-    new_user = User.last
+    click_button("Submit")
 
     expect(current_path).to eq("/")
     expect(page).to have_content("Welcome, #{username}!")

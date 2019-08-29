@@ -13,4 +13,9 @@ Rails.application.routes.draw do
   patch "/cart/:song_id", to: "cart#add_song"
   get "/artists/:id/edit", to: "artists#edit"
   patch "/artists/:id", to: "artists#update"
+
+  get '/', to: 'landing#home'
+
+  get '/users/new', to: 'users#new'
+  post '/users', to: 'users#create'
 end

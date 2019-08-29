@@ -3,8 +3,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.create!(user_params)
+    user = User.create!(user_params)
+    session[:user_id] = user.id
+    flash[:success] = "Welcome, #{user.username}!"
     redirect_to "/"
+  end
+
+  def show
+    @user = User.find(session[:user_id])
+    render :profile
   end
 
   private

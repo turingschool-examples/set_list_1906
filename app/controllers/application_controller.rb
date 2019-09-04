@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
   
+  def current_admin?
+    current_user && current_user.admin?
+  end
+
   def current_user
     ##code that returns current user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

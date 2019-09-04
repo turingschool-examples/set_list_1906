@@ -23,4 +23,9 @@ Rails.application.routes.draw do
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+
+  namespace :admin do
+    #only admin users will be able to reach this resource
+    get '/dashboard', to: "dashboard#index"
+  end
 end

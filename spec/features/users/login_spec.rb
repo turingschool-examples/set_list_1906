@@ -10,11 +10,10 @@ RSpec.describe "User Login" do
     fill_in :password, with: user.password
 
     click_button "Submit"
-
     expect(page).to have_content("Welcome, #{user.username}!")
 
     visit "/profile"
-
+    
     expect(page).to have_content(user.username)
   end
 end

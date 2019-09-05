@@ -14,6 +14,7 @@ describe "Admin can email users" do
     end
   end
 
+
   describe "as default user" do
     it 'does not allow default user to see admin dashboard index' do
       user = User.create(username: "fern@gully.com",
@@ -28,4 +29,5 @@ describe "Admin can email users" do
       expect(page).to have_content("The page you were looking for doesn't exist.")
     end
   end
+
 end

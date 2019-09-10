@@ -20,9 +20,9 @@ describe "New Song For Artist" do
 
     expect(current_path).to eq("/artists/#{journey.id}/songs/new")
 
-    fill_in :title, with: title
-    fill_in :length, with: length
-    fill_in :play_count, with: play_count
+    fill_in "Title", with: title
+    fill_in "Length", with: length
+    fill_in "Play count", with: play_count
 
     click_on "Create Song"
 
